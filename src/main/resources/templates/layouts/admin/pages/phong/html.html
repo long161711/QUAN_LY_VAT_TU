@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Demo thẻ select-option: Jump Menu</title>
+</head>
+
+<body>
+<form>
+<label for="ngonngu">Mời chọn một ngôn ngữ:</label>
+<select id="ngonngu" name="ngonngu" onChange="window.location(options[selectedIndex].value,'')">
+<option hidden>--Chọn 1 ngôn ngữ--</option>
+<option value="http://localhost:8080/quanlyuser">quản lý user</option>
+<option value="http://v1study.com/html5-gioi-thieu-a43.html">HTML5</option>
+<option value="http://v1study.com/css-gioi-thieu-a44.html">CSS3</option>
+<option value="http://v1study.com/javascript-js-gioi-thieu-a45.html">JavaScript</option>
+<option value="http://v1study.com/jquery-gioi-thieu-a46.html">jQuery</option>
+<option value="http://v1study.com/sql-gioi-thieu-a1.html">SQL</option>
+<option value="http://v1study.com/php-gioi-thieu-a497.html">PHP</option>
+</select>
+<select onChange="window.location=this.value">
+<option value ="">select</option> 
+<option value="http://localhost:8080/quanlyuser">google</option>
+<option value="http://v1study.com/html5-gioi-thieu-a43.html">HTML5</option>
+</select>
+</form>
+</body>
+</html>

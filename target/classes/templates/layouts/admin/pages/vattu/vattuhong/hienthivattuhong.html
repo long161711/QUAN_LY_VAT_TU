@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOME PAGE</title>
+	<!-- BOOTSTRAP STYLES-->
+    <link href="../static/css/bootstrap.css" rel="stylesheet" />
+     <!-- FONTAWESOME STYLES-->
+    <link href="../static/css/font-awesome.css" rel="stylesheet" />
+     <!-- MORRIS CHART STYLES-->
+    <link href="../static/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+        <!-- CUSTOM STYLES-->
+    <link href="../static/css/custom.css" rel="stylesheet" />
+     <!-- GOOGLE FONTS-->
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="dashboard">Nhóm Thầy Nguyên</a> 
+            </div>
+  <div style="color: white;
+padding: 15px 50px 5px 50px;
+float: right;
+font-size: 16px;"><a href="sign-out.html" th:href="@{/sign-out}" class="btn btn-danger square-btn-adjust">Logout</a> </div>
+        </nav>   
+           <!-- /. NAV TOP  -->
+                <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+				<li class="text-center">
+					</li>
+				
+					
+                    <li>
+                        <a class="active-menu" th:href="@{/dashboard}"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+                    </li>
+                     <li>
+  		 				<a href="quanlyuser.html" th:href="@{/quanlyuser}">Quản Lý user</a>
+                    </li>
+                     <li>
+ 			 			<a href="hienthikhoa.html" th:href="@{/hienthikhoa}">Khoa</a>
+                    </li>		
+                      <li  >
+ 			 			<a href="hienthitatcavattu.html" th:href = "@{/hienthitatcavattu}">Vật Tư </a>
+                    </li>
+                    <li  >
+ 			 			<a href="hienthivattuhong.html" th:href = "@{/hienthivattuhong}">Kho Vật Tư Hỏng</a>
+                    </li>
+                    <li  >
+ 			 			<a href="hienthivattuthanhly.html" th:href = "@{/hienthivattuthanhly}">Kho Vật Tư Thanh Lý</a>
+                    </li>
+                  <!-- <li  >
+                        <a  href="blank.html"><i class="fa fa-square-o fa-3x"></i> Blank Page</a>
+                    </li>	 -->
+                </ul>
+               
+            </div>
+            
+        </nav>  
+       <div id="page-wrapper" >
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                     <h2>Danh sách vật tư hỏng</h2>   
+                    </div>
+                </div>
+                 <!-- /. ROW  -->
+                 <hr />
+               
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Advanced Tables -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Danh sách vật tư hỏng
+                        </div>
+                            		<a href = "timkiemvattuhong.html" th:href="@{/timkiemvattuhong}">Tìm Kiếm Vật Tư</a>
+                        
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Mã Vật Tư</th>
+                                            <th>Tên Vật Tư</th>
+                                            <th>Thông Số Kĩ Thuật</th>
+                                            <th>Năm Sử Dụng</th>
+                                            <th>Số Lượng</th>
+                                        </tr>
+                                        <tr th:each= " a : ${list} ">
+    			<td th:text="*{a.getId()}"></td>
+    			<td th:text="*{a.getMaVatTu()}"></td>
+    			<td th:text="*{a.getTenVatTu()}"></td>
+    			<td th:text="*{a.getThongSoKiThuat()}"></td>
+    			<td th:text="*{a.getNamSuDung()}"></td>
+    			<td th:text="*{a.getSoLuong()}"></td>
+         		<td><a th:href="@{/deletevattuhong/{id}(id=${a.id})}" onclick="if (!(confirm('Bạn có chắc chắn răng muốn xoa dữ liệu vật tư này không ???'))) return false">delete</a></td>
+    			
+    		</tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+     <!-- /. WRAPPER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="../static/js/jquery-1.10.2.js"></script>
+      <!-- BOOTSTRAP SCRIPTS -->
+    <script src="../static/js/bootstrap.min.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="../static/js/jquery.metisMenu.js"></script>
+     <!-- MORRIS CHART SCRIPTS -->
+     <script src="../static/js/morris/raphael-2.1.0.min.js"></script>
+    <script src="../static/js/morris/morris.js"></script>
+      <!-- CUSTOM SCRIPTS -->
+    <script src="../static/js/custom.js"></script>
+    
+   
+</body>
+</html>
